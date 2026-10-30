@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ckb" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پڕۆژەی خێرخوازی میللەت</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background-color: #f3f4f6;
+            color: #1f2937;
+            padding: 20px 12px;
+            direction: rtl;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: #ffffff;
+            padding: 24px 16px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            color: #10b981;
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: #6b7280;
+            font-size: 0.95rem;
+        }
+
+        .donor-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .donor-card {
+            background: #ffffff;
+            padding: 14px 18px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+            border-right: 5px solid #10b981;
+        }
+
+        .donor-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .donor-badge {
+            background-color: #ecfdf5;
+            color: #059669;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .donor-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #374151;
+        }
+
+        .donor-amount {
+            background-color: #f0fdf4;
+            color: #15803d;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>پڕۆژەی خێرخوازی میللەت</h1>
+            <p>لیستی بەخشەرە بەڕێزەکان لە ١ تا ١٠٠</p>
+        </header>
+
+        <div class="donor-list" id="donorList">
+            <!-- ژمارە ١ تا ١٠٠ بە شێوەی خۆکار لە خوارەوە دروست دەبێت -->
+        </div>
+    </div>
+
+    <script>
+        const donorList = document.getElementById('donorList');
+
+        // کۆکردنەوە و ڕیزکردنی ١ تا ١٠٠
+        for (let i = 1; i <= 100; i++) {
+            const card = document.createElement('div');
+            card.className = 'donor-card';
+
+            card.innerHTML = `
+                <div class="donor-info">
+                    <span class="donor-badge">${i}</span>
+                    <span class="donor-title">خێرخواز ژمارە ${i}</span>
+                </div>
+                <div class="donor-amount">١ ملیۆن دینار بەخشیوە</div>
+            `;
+
+            donorList.appendChild(card);
+        }
+    </script>
+
+</body>
+</html>
